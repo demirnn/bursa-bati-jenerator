@@ -20,4 +20,4 @@ RUN npm run build
 # Start the built app
 ENV PORT=3000
 EXPOSE 3000
-CMD ["sh", "-c", "PORT=3000 npx serve -s dist -l tcp://0.0.0.0:3000"]
+CMD ["node", "server.cjs"]

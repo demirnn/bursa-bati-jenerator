@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "push": "python3 push_gh.py",
-    "start": "PORT=3000 serve -s dist -l 3000"
+    "start": "node server.cjs"
   },
   "dependencies": {
     "@google/genai": "^1.41.0",
