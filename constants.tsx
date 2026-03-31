@@ -239,49 +239,10 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const GOBIZ_CERTIFICATES = [
-  {
-    id: 'c1',
-    title: 'ISO 9001:2015',
-    subtitle: 'Kalite Yönetim Sistemi',
-    description: 'Kalite yönetim sistemimizin uluslararası standartlara uygunluğunu belgeleyen sertifika.',
-    issuer: 'TÜV SÜD',
-    validity: '2025-12-31',
-    icon: 'fa-award'
-  },
-  {
-    id: 'c2',
-    title: 'ISO 14001:2015',
-    subtitle: 'Çevre Yönetim Sistemi',
-    description: 'Çevresel etkileri minimize eden üretim süreçlerimizi belgeleyen sertifika.',
-    issuer: 'Bureau Veritas',
-    validity: '2025-08-15',
-    icon: 'fa-leaf'
-  },
-  {
-    id: 'c3',
-    title: 'CE Uygunluk Belgesi',
-    subtitle: 'Avrupa Uygunluk',
-    description: 'Ürünlerimizin Avrupa Birliği standartlarına uygunluğunu belgeleyen sertifika.',
-    issuer: 'Notified Body',
-    validity: '2026-03-20',
-    icon: 'fa-euro-sign'
-  },
-  {
-    id: 'c4',
-    title: 'ISO 45001:2018',
-    subtitle: 'İş Sağlığı ve Güvenliği',
-    description: 'İş sağlığı ve güvenliği yönetim sistemimizin standartlara uygunluğu.',
-    issuer: 'SGS',
-    validity: '2025-11-10',
-    icon: 'fa-user-shield'
-  },
-  {
-    id: 'c5',
-    title: 'TSE Hizmet Yeterlilik Belgesi',
-    subtitle: 'Hizmet Kalitesi',
-    description: 'Satış sonrası hizmetlerimizin TSE standartlarına uygunluğunu belgeleyen sertifika.',
-    issuer: 'TSE',
-    validity: '2025-06-30',
-    icon: 'fa-check-double'
-  }
+  { id: 'c1', title: 'AT UYGUNLUK BEYANI', subtitle: 'Avrupa Standartları', description: 'Ürün sistemlerimizin temel güvenlik gereksinimlerini karşıladığını beyan ederiz.', issuer: 'Gobiz', validity: 'Sürekli', icon: 'fa-certificate' },
+  { id: 'c2', title: 'CE UYGUNLUK BELGESİ', subtitle: 'Avrupa Uygunluk', description: 'Ürünlerimizin Avrupa Birliği standartlarına uygunluğunu belgeleyen sertifika.', issuer: 'Notified Body', validity: 'Sürekli', icon: 'fa-euro-sign' },
+  { id: 'c3', title: 'ISO 14001', subtitle: 'Çevre Yönetim Sistemi', description: 'Çevresel etkileri minimize eden üretim süreçlerimizi belgeleyen sertifika.', issuer: 'Bureau Veritas', validity: 'Sürekli', icon: 'fa-leaf' },
+  { id: 'c4', title: 'ISO 9001', subtitle: 'Kalite Yönetim Sistemi', description: 'Kalite yönetim sistemimizin uluslararası standartlara uygunluğunu belgeleyen sertifika.', issuer: 'TÜV SÜD', validity: 'Sürekli', icon: 'fa-award' },
+  { id: 'c5', title: 'ISO 10002', subtitle: 'Müşteri Memnuniyeti', description: 'Müşteri geri bildirimlerini etkin yöneterek hizmet kalitemizi artırdığımızı belgeler.', issuer: 'TÜV SÜD', validity: 'Sürekli', icon: 'fa-user-check' },
+  { id: 'c6', title: 'ISO 45001', subtitle: 'İş Sağlığı ve Güvenliği', description: 'İş sağlığı ve güvenliği yönetim sistemimizin standartlara uygunluğu.', issuer: 'SGS', validity: 'Sürekli', icon: 'fa-user-shield' }
 ];
