@@ -1,0 +1,14 @@
+# Sadece ağır paketleri ve build çıktılarını yoksayıyoruz
+node_modules/
+dist/
+dist-ssr/
+build/
+.next/
+out/
+
+# Diğer tüm dosyaları (gizli dosyalar dahil) alması için
+!.env
+!.claude/
+!.vscode/
+!.idea/
+!.DS_Store

@@ -1,0 +1,7 @@
+{
+  "name": "Remix: Bursa Batı Jeneratör",
+  "description": "Bursa ve çevresinde profesyonel jeneratör satış, servis ve bakım hizmetleri sunan kurumsal web sitesi.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

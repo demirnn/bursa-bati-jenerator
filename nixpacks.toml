@@ -1,0 +1,9 @@
+[providers.node]
+node_version = "20"
+
+[phases.setup]
+nixPkgs = ["...", "nodejs_20", "chromium", "glib", "nss", "nssTools"]
+
+[variables]
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1"
+PUPPETEER_EXECUTABLE_PATH = "/nix/var/nix/profiles/default/bin/chromium"
