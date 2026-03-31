@@ -60,6 +60,11 @@ async function prerender() {
   const server = await startServer(port);
 
   let executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+  const nixPath = '/nix/var/nix/profiles/default/bin/chromium';
+  if (!executablePath && require('fs').existsSync(nixPath)) {
+    executablePath = nixPath;
+  }
+
   if (!executablePath) {
     try {
       executablePath = execSync('which chromium').toString().trim();

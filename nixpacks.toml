@@ -2,7 +2,7 @@
 node_version = "20"
 
 [phases.setup]
-nixPkgs = ["...", "nodejs_20", "chromium", "glib", "nss", "nssTools"]
+nixPkgs = ["...", "nodejs_20", "chromium", "glib", "nss", "nssTools", "wget"]
 
 [variables]
 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "1"
