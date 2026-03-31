@@ -1,24 +1,22 @@
-FROM ghcr.io/puppeteer/puppeteer:latest
+FROM node:20-slim
 
-# Set environment variables for Puppeteer cache bypassing
+# Install the system Chromium browser. Apt-get will automatically resolve ALL UI/X11 dependencies (unlike Nixpacks).
+RUN apt-get update && apt-get install -y chromium && rm -rf /var/lib/apt/lists/*
+
+# Tell Puppeteer to skip downloading the massive cache version and use our fast system version
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
-
-# The base image uses `pptruser` but we might need root to do standard npm installations and Vite builds
-USER root
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
 WORKDIR /app
 
-# Install dependencies first (better caching)
+# Optimize layer caching for dependencies
 COPY package*.json ./
 RUN npm install
 
-# Copy application source
+# Copy source and build
 COPY . .
-
-# Build the Vite application & trigger prerender script
 RUN npm run build
 
-# Expose port and start
+# Start the built app
 EXPOSE 3000
 CMD ["npm", "start"]
