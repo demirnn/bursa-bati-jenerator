@@ -18,5 +18,6 @@ COPY . .
 RUN npm run build
 
 # Start the built app
+ENV PORT=3000
 EXPOSE 3000
 CMD ["npm", "start"]
