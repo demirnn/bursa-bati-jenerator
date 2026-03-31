@@ -1,42 +1,24 @@
-FROM node:20-slim
+FROM ghcr.io/puppeteer/puppeteer:latest
 
-# Install Chromium and required dependencies
-RUN apt-get update && apt-get install -y \
-    chromium \
-    libnss3 \
-    libnspr4 \
-    libatk1.0-0 \
-    libatk-bridge2.0-0 \
-    libcups2 \
-    libdrm2 \
-    libdbus-1-3 \
-    libxcb1 \
-    libxkbcommon0 \
-    libx11-6 \
-    libcomposite1 \
-    libasound2 \
-    libxrandr2 \
-    libgbm1 \
-    libgtk-3-0 \
-    libpangocairo-1.0-0 \
-    libpango-1.0-0 \
-    libcairo2 \
-    libglib2.0-0 \
-    libxshmfence1 \
-    && rm -rf /var/lib/apt/lists/*
-
+# Set environment variables for Puppeteer cache bypassing
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+
+# The base image uses `pptruser` but we might need root to do standard npm installations and Vite builds
+USER root
 
 WORKDIR /app
 
+# Install dependencies first (better caching)
 COPY package*.json ./
 RUN npm install
 
+# Copy application source
 COPY . .
 
+# Build the Vite application & trigger prerender script
 RUN npm run build
 
+# Expose port and start
 EXPOSE 3000
-
 CMD ["npm", "start"]
